@@ -1,28 +1,28 @@
-# PhishGuard AI: Multilingual Phishing Detection Framework
+# PhishGuard AI: Multilingual Phishing Email Detection
 **Lead Researcher & Developer** | Published in IRJET (Oct 2025)
 
 ## 📌 Overview
-PhishGuard AI is an end-to-end cybersecurity solution featuring a Chrome Extension and a localized backend. It detects phishing attempts in English, Hindi, and Gujarati, providing real-time protection and digital literacy for non-native English speakers.
+PhishGuard AI is a specialized framework for detecting phishing attempts in emails across English, Hindi, and Gujarati. By leveraging transformer-based models, it identifies malicious intent in communication that standard filters often miss, especially in code-switched (mixed language) text.
 
 ## 🚀 Key Features
-- **Chrome Extension Integration:** Real-time scanning of browser content.
-- **Multilingual NLP:** Uses XLM-RoBERTa to analyze code-switching and regional dialects.
-- **Explainable AI:** Breaks down *why* a site is dangerous in the user's native language.
+- **Email Analysis:** Scans email headers and body text for phishing indicators.
+- **Multilingual NLP:** Powered by **XLM-RoBERTa**, specifically fine-tuned to recognize phishing patterns in regional Indian languages.
+- **Explainable AI (XAI):** Instead of a simple "Spam" label, the system explains *why* an email is suspicious in the user's native language.
 
-## 📊 Dataset & Training
-The model was trained and validated using a combined corpus of approximately **25,000+ emails and URLs**, integrating both public security datasets and curated multilingual samples to ensure high accuracy across diverse linguistic patterns.
+## 📊 Dataset
+The model was trained on a consolidated corpus of ~25,000 emails:
+- **Source A:** ~5,000 high-density phishing/safe samples.
+- **Source B:** ~20,000 diverse email datasets (Spam vs. Ham).
+- **Custom Layer:** Integrated multilingual samples to validate Gujarati and Hindi detection.
 
 ## 🛠 Tech Stack
-- **AI/ML:** Python, PyTorch, XLM-RoBERTa
-- **Frontend:** JavaScript (Chrome Extension API)
-- **Backend:** Python (FastAPI/Flask)
+- **AI/ML:** Python, PyTorch, HuggingFace (XLM-RoBERTa)
+- **Extension:** JavaScript (UI for submitting/viewing email analysis)
+- **Backend:** Python (FastAPI/Flask) to process the ML inference.
 
 ## 📁 Repository Structure
-- `backend/`: AI model API and detection logic.
-- `extension/`: Chrome Extension frontend and manifest files.
-- `shared/`: Common utilities and multilingual dictionaries.
-- `storage/`: Localized data handling and logs.
-- `run.sh`: Automated script to boot the environment.
-
-## 📄 Research & Publication
-Published in the *International Research Journal of Engineering and Technology (IRJET)*, Volume 12, Issue 10.
+- `backend/`: Core AI model, inference API, and text preprocessing.
+- `extension/`: Frontend interface for user interaction.
+- `shared/`: Logic shared between the interface and the server.
+- `storage/`: Database/Log handling for analyzed samples.
+- `run.sh`: Shell script for one-click environment setup.
