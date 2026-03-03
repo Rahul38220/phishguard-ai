@@ -1,28 +1,26 @@
-# PhishGuard AI: Multilingual Phishing Email Detection
+# PhishGuard AI: Phishing Email Detection Framework
 **Lead Researcher & Developer** | Published in IRJET (Oct 2025)
 
 ## 📌 Overview
-PhishGuard AI is a specialized framework for detecting phishing attempts in emails across English, Hindi, and Gujarati. By leveraging transformer-based models, it identifies malicious intent in communication that standard filters often miss, especially in code-switched (mixed language) text.
+PhishGuard AI is an AI-driven framework designed to identify and classify phishing attempts within email communications. By utilizing transformer-based NLP models, the system distinguishes between legitimate "Ham" and malicious "Phishing" content with high precision.
 
 ## 🚀 Key Features
-- **Email Analysis:** Scans email headers and body text for phishing indicators.
-- **Multilingual NLP:** Powered by **XLM-RoBERTa**, specifically fine-tuned to recognize phishing patterns in regional Indian languages.
-- **Explainable AI (XAI):** Instead of a simple "Spam" label, the system explains *why* an email is suspicious in the user's native language.
+- **Automated Classification:** Detects sophisticated phishing patterns in email bodies and headers.
+- **Explainable AI (XAI):** Provides transparency by highlighting specific triggers that lead to a "Phishing" classification.
+- **Modular Backend:** A Python-based inference engine that can be called by various frontends.
 
-## 📊 Dataset
-The model was trained on a consolidated corpus of ~25,000 emails:
-- **Source A:** ~5,000 high-density phishing/safe samples.
-- **Source B:** ~20,000 diverse email datasets (Spam vs. Ham).
-- **Custom Layer:** Integrated multilingual samples to validate Gujarati and Hindi detection.
+## 📊 Dataset & Training
+The model was trained and evaluated on a combined corpus of **25,000+ emails** sourced from **Kaggle** and public security repositories. 
+- **Preprocessing:** Involved tokenization, stop-word removal, and cleaning of raw email HTML/headers.
+- **Model:** Fine-tuned **XLM-RoBERTa** for robust text feature extraction.
 
 ## 🛠 Tech Stack
-- **AI/ML:** Python, PyTorch, HuggingFace (XLM-RoBERTa)
-- **Extension:** JavaScript (UI for submitting/viewing email analysis)
-- **Backend:** Python (FastAPI/Flask) to process the ML inference.
+- **AI/ML:** Python, PyTorch, HuggingFace, Scikit-learn
+- **Interface:** JavaScript (Chrome Extension UI for email submission)
+- **Backend:** Python (FastAPI/Flask)
 
 ## 📁 Repository Structure
-- `backend/`: Core AI model, inference API, and text preprocessing.
-- `extension/`: Frontend interface for user interaction.
-- `shared/`: Logic shared between the interface and the server.
-- `storage/`: Database/Log handling for analyzed samples.
-- `run.sh`: Shell script for one-click environment setup.
+- `backend/`: AI model logic and API endpoints.
+- `extension/`: The user interface for interacting with the detection engine.
+- `shared/`: Utility scripts and configuration.
+- `storage/`: Data logs and local storage handling.
