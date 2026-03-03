@@ -1,0 +1,28 @@
+
+body {
+  background-color: #fdfdfd;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 10px;
+  color: #000;
+}
+
+h1 {
+  color: #5e239d;
+  border-bottom: 2px solid #d4af37;
+  padding-bottom: 5px;
+}
+
+#scan {
+  background-color: #d4af37;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 12px;
+  color: #5e239d;
+  font-weight: bold;
+}
